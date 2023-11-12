@@ -11,6 +11,11 @@ from chat_anything.azure_utils import AzureVoiceData
 from chat_anything.chatbot.chat import set_openai_api_key
 from utils import ChatWrapper, update_foo, reset_memory
 
+from python_scripts.prepare_models import prepare_face_generator_models, prepare_sadtalker_models
+prepare_sadtalker_models()
+prepare_face_generator_models()
+
+
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
@@ -230,10 +235,11 @@ with gr.Blocks() as block:
                                   outputs=[llm_state, use_gpt4_state, chatbot, uid_state, video_file_path, audio_file_path])
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) == 1:
-        port = 8901
-    else:
-        port = int(sys.argv[1])
-    block.launch(debug=True, server_name="0.0.0.0",
-                 server_port=port, share=True, enable_queue = True)
+    # import sys
+    # if len(sys.argv) == 1:
+    #     port = 8901
+    # else:
+    #     port = int(sys.argv[1])
+    # block.launch(debug=True, server_name="0.0.0.0",
+    #              server_port=port, share=True, enable_queue = True)
+    block.launch()
