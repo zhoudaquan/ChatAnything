@@ -1,0 +1,51 @@
+prompt: >-
+  Select one of the following models for image generation for the given concept.
+  Each model experts at generating one specific style of images. 
+  Choose base on the style that most suits the given concept to help generate the most appropriate image the accords with the user's input.
+  Select from the options based on the relative association of the description of each model and the 
+  given concept.
+
+
+  Concept:
+  
+models:
+  # sd1.5:
+  #   desc: >-
+  #     A realistic photo style image generator experts at realistic photo generation. The model sucks.
+  #   lora_path: 
+  #   model_dir: runwayml/stable-diffusion-v1-5
+  #   prompt_template: A portrait of {}, fine face, nice looking
+  #   negative_prompt: ""
+
+  GameIconInstitute_mode:
+    desc: >-
+      A cartoon style image generator experts at generating bizarre concepts.
+    lora_path: 
+    model_dir: MODELS/GameIconInstitute_mode
+    prompt_template: A portrait of a {} monster, fine face, nice looking
+    negative_prompt: easynegative,Low resolution,Low quality, Opened Mouth
+    
+  anything-v5:
+    desc: >-
+      A Japanese animate style girl character generator.
+    lora_path: 
+    model_dir: MODELS/anything-v5
+    prompt_template: actual 8K portrait photo of {} monster, portrait, happy colors, symmetrical, detailed face, stanley artgerm lau, wlop, rossdraws, concept art, digital painting, looking into camera
+    negative_prompt: painting, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, bad anatomy, bad proportions, extra limbs, cloned face, skinny, glitchy, double torso, extra arms, extra hands, mangled fingers, missing lips, ugly face, distorted face, extra legs, anime
+
+  dream_shaper:
+    desc: >-
+      A artisic realistic beauty image generator experts at artisic portrait generation.
+    lora_path: 
+    model_dir: MODELS/DreamShaper
+    prompt_template: >
+      fashion photography portrait of {} monster, 3d render, cgi, symetrical, octane render, 35mm, bokeh, 9:16, (intricate details:1.12), hdr, (intricate details, hyperdetailed:1.15), (natural skin texture, hyperrealism, soft light, sharp:1.2), detailed
+    negative_prompt: "BadDream, UnrealisticDream"
+  
+  3D_Animation_Diffusion:
+    desc: >-
+      A 3D rendering image generator.
+    lora_path: 
+    model_dir: MODELS/3D_Animation_Diffusion
+    prompt_template: A portrait of {} monster, fine face, nice looking
+    negative_prompt: "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, Ugly, deformed, ugly face, low face quality,"
