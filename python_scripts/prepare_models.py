@@ -27,7 +27,7 @@ MODEL_DIR='./MODELS'
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 def prepare_sadtalker_models():
-    snapshot_download(repo_id='vinthony/SadTalker', local_dir=osp.join(MODEL_DIR, 'SadTalker'), local_dir_use_symlinks=True)
+    # snapshot_download(repo_id='vinthony/SadTalker', local_dir=osp.join(MODEL_DIR, 'SadTalker'), local_dir_use_symlinks=True)
     load_file_from_url(
         url='https://github.com/xinntao/facexlib/releases/download/v0.1.0/alignment_WFLW_4HG.pth', 
         model_dir='facexlib/weights', 

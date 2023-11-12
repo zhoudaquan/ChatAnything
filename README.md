@@ -4,13 +4,12 @@ emoji: 👀
 colorFrom: green
 colorTo: green
 sdk: gradio
-sdk_version: 3.47.1
+sdk_version: 3.41.0
 app_file: app.py
 python_version: 3.8.10
 pinned: false
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 # ChatAnything: Facetime Chat with LLM-Enhanced Personas
 
 **Yilin Zhao\*, Shanghua Gao\*, Daquan Zhou\*, Xinbin Yuan\*, Zhijie Lin, Qibin Hou, Jiashi Feng**  
