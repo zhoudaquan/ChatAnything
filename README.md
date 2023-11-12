@@ -9,10 +9,9 @@ app_file: app.py
 python_version: 3.8.10
 pinned: false
 ---
-
 # ChatAnything: Facetime Chat with LLM-Enhanced Personas
 
-**Yilin Zhao\*, Shanghua Gao\*, Daquan Zhou\*, Xinbin Yuan\*, Zhijie Lin, Qibin Hou, Jiashi Feng**  
+**Yilin Zhao\*, Xinbin Yuan\*, Shanghua Gao\*, Zhijie Lin, Qibin Hou, Jiashi Feng, Daquan Zhou\***  
 
 
 
@@ -142,8 +141,8 @@ If you like our pipeline and application, don't hesitate to reach out! Let's wor
 ```bibtex
 @misc{zhao2023ChatAnything,
       title={ChatAnything: Facetime Chat with LLM-Enhanced Personas}, 
-      author={Yilin, Zhao and Shanghua, Gao and Daquan, Zhou and Xinbin, Yuan and Qibin, Hou and Jiashi, Feng},
-      publisher={},
+      author={Yilin, Zhao and Xinbin, Yuan and Shanghua, Gao and Zhijie Lin and Qibin, Hou and Jiashi, Feng and Daquan, Zhou},
+      publisher={TODO:link},
       year={2023},
 }
 ```
