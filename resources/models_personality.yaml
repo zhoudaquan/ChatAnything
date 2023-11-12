@@ -1,0 +1,64 @@
+prompt: >-
+  Select one of the following models for image generation for the given concept. 
+  The user wants to chat with such object. 
+  The concept is presented by the personality of a intended object for the user to chat with. 
+  Each model experts at generating one specific style of images. 
+  The goal is to interpret the purpose of user and choose base on the style that most suits the given concept to help generate the most appropriate image that accords with the user's input. 
+  Select one of the options based on the relative association of the description of each model and the given concept to satisfy user
+  
+  
+  Personality:
+  
+
+models:
+  # sd1.5:
+  #   desc: >-
+  #     A realistic photo style image generator experts at realistic photo generation. The model sucks.
+  #     Only choose when the user wants realistic image outputs.
+  #   lora_path: 
+  #   model_dir: MODELS/stable-diffusion-v1-5
+  #   prompt_template: A portrait of {}, fine face, nice looking
+  #   negative_prompt: ""
+
+  GameIconInstitute_mode:
+    desc: >-
+      A artistic cartooning style image generator experts at generating bizarre concepts. The generated 
+      images usually contains exaggerated concepts. The artistic style of images uses Vibrant Colors and 
+      are full of energy. Artistic cartoonists often use visual gags and puns to impress people. Storytelling
+      and Narrative is a main property for this style.
+    lora_path: 
+    model_dir: MODELS/GameIconInstitute_mode
+    prompt_template: A portrait of a {}, fine face, nice looking
+    negative_prompt: easynegative,Low resolution,Low quality, Opened Mouth
+
+  anything-v5:
+    desc: >-
+      A Japanese animate style image generator. Choose when you imagen the user
+      to expect a Cute character. Especially when user wants cute animate girls.
+    lora_path: 
+    model_dir: MODELS/anything-v5
+    prompt_template: actual 8K portrait photo of {} girl, portrait, happy colors, symmetrical, detailed face, stanley artgerm lau, wlop, rossdraws, concept art, digital painting, looking into camera
+    negative_prompt: painting, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, bad anatomy, bad proportions, extra limbs, cloned face, skinny, glitchy, double torso, extra arms, extra hands, mangled fingers, missing lips, ugly face, distorted face, extra legs, anime
+
+  dream_shaper:
+    desc: >-
+      A artisic realistic beauty image generator experts at artisic portrait generation. 
+      This model Emphasis on Aesthetics and the portrayal of beauty. Achieving artistic 
+      realistic beauty typically requires a high level of technical skill. The model often 
+      have room for creative interpretation for real objects. Choose when you imagen the user
+      wants highly Aesthetic image of intended object.
+    lora_path: 
+    model_dir: MODELS/DreamShaper
+    prompt_template: >
+      fashion photography portrait of {}, 3d render, cgi, symetrical, octane render, 35mm, bokeh, 9:16, (intricate details:1.12), hdr, (intricate details, hyperdetailed:1.15), (natural skin texture, hyperrealism, soft light, sharp:1.2), detailed
+    negative_prompt: "BadDream, UnrealisticDream"
+
+  3D_Animation_Diffusion:
+    desc: >-
+      A 3D image generator. 3D style image generation is usually like generated out of game engine. 
+      The style would be unlimited to specific concepts. Choose when the concept is enthusiastic and energitic.
+
+    lora_path: 
+    model_dir: MODELS/3D_Animation_Diffusion
+    prompt_template: A portrait of {}, fine face, nice looking
+    negative_prompt: "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, Ugly, deformed, ugly face, low face quality,"

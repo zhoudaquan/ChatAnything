@@ -1,0 +1,33 @@
+prompt: >-
+  Select one of the following voice based on the given concept's personality. 
+  The user wants to chat with such concept. 
+  Notice the language input of the user and mainly consider the language and gender of the voice.
+  You must choose one voice name based on the description of each model and the concept.
+
+  Personality:
+
+
+models:
+  chinese_male:
+    desc: >
+      This is a male speaking Chinese  
+    gender: Male
+    language: zh
+
+  english_male:
+    desc: >
+      this is a male speaking English.
+    gender: Male
+    language: en
+
+  chinese_female:
+    desc: >
+      This is a female speaking Chinese
+    gender: Female
+    language: zh
+
+  english_female:
+    desc: >
+      this is a female speaking English.
+    gender: Female
+    language: zh

@@ -1,0 +1,13 @@
+models:
+  ALL - Stefanie Sun:
+  # model_A:
+    desc: >
+      This is Stefanie Sun's voice,a woman's voice, a captivating singer's voice that enchants listeners. Stefanie Sun's voice can be described as a melodic and emotive masterpiece. It possesses a velvety smoothness with a hint of warmth, allowing her vocals to effortlessly glide through the air. Her voice carries a unique timbre that is instantly recognizable, captivating listeners with its rich and enchanting quality.
+    model_name: ALL - Stefanie Sun
+    sex: female
+
+  ALL - Bob Sponge:
+  # model_A:
+    desc: >
+      This is  SpongeBob's voice, a man's voice, a delightful and distinctive representation of a cute cartoon character. It is characterized by a high-pitched and cheery tone that instantly grabs attention. The voice is incredibly animated and expressive, capturing SpongeBob's bubbly and upbeat personality flawlessly. With each word, it exudes a sense of infectious joy and childlike wonder, creating an immediate connection with the audience.
+    model_name: ALL - Bob Sponge

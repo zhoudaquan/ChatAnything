@@ -1,0 +1,16 @@
+**__pycache__/
+
+MODELS
+third_party
+tmp
+results
+chat_anything/tts_vits/
+vits_results
+test
+resources/models.yaml
+
+# others
+GFPGANv1.4.pth
+gfpgan
+GFPGAN
+.gitattributes
