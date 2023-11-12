@@ -1,11 +1,12 @@
 ---
 title: ChatAnything
-emoji: 🔥
+emoji: 👀
 colorFrom: green
 colorTo: green
 sdk: gradio
 sdk_version: 3.47.1
 app_file: app.py
+python_version: 3.8.10
 pinned: false
 ---
 
@@ -147,4 +148,3 @@ If you like our pipeline and application, don't hesitate to reach out! Let's wor
       year={2023},
 }
 ```
-
