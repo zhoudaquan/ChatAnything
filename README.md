@@ -19,7 +19,7 @@ pinned: false
 To animate anything, we integrated current open-source models at hand for an animation application for interactive AI-Agent chatting usage. 
 > 
 > To start with, take a look at these incredible faces generated with open-source Civitai models that are to be animated.
-<img src="./resources/readme/show.png" alt="drawing" width="784"/>
+<img src="./resources/readme/short_demo.mp4" alt="drawing" width="512"/>
 <!-- ![faces](./resources/readme/show.png) -->
 
 Here we provide you with ChatAnything. A simple pipeline Enhanced with currently limitless Large Language Models, yielding imaginary Facetime chats with intented visual appearance!
