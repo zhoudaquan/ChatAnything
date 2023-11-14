@@ -94,7 +94,7 @@ class ChatWrapper:
         html_audio = '<pre>no audio</pre>'
         try:
             temp_aud_file = gr.File(audo_file_path)
-            print("audio-----------------------------------------------------success")
+            # print("audio-----------------------------------------------------success")
             temp_aud_file_url = "/file=" + temp_aud_file.value['name']
             html_audio = f'<audio autoplay><source src={temp_aud_file_url} type="audio/mp3"></audio>'
         except IOError as error:
@@ -120,8 +120,8 @@ class ChatWrapper:
         face_file_path = os.path.join('tmp', uid, 'images', 'test.jpg')
         
         video = self.sad_talker.test(face_file_path, audio_path,preprocess, uid=uid) #video_file_path
-        print("---------------------------------------------------------success")
-        print(f"moving {video} -> {video_file_path}")
+        # print("---------------------------------------------------------success")
+        # print(f"moving {video} -> {video_file_path}")
         shutil.move(video, video_file_path)
 
         return video_file_path, video_file_path
@@ -190,7 +190,7 @@ class ChatWrapper:
 
 
     def update_talking_head(self, widget, uid, state):
-        print("success----------------")
+        # print("success----------------")
         if widget:
             state = widget
             temp_file = os.path.join('tmp', uid, 'videos')
