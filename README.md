@@ -41,7 +41,7 @@ Remember, the repo and application are totally based on pre-trained deep learnin
 # Install & Run
 Just follow the instructions. Every thing would be simple (hopefully). Reach out if you met with any problems!
 ### Install
-first, install the virtual environment.
+First, install the virtual environment.
 ```
 conda env create -f environment.yaml
 
@@ -66,7 +66,7 @@ docker run -it --gpus all chatanything bash
 ``` 
 
 ### Run
-specify a port for the gradio application to run on and set off!
+Specify a port for the gradio application to run on and set off!
 ```
 PORT=8809 python app.py $PORT
 ```
@@ -120,7 +120,7 @@ You would need to change a little bit in the code first:
 The try running a [Voice Changer](https://huggingface.co/spaces/kevinwang676/Voice-Changer) on your local machine. Simply set up git-lfs and install the repo and run it for the TTS voice service.
 The TTS caller was set to port 7860. 
 
-make sure the client class is set up with the same port in [here](chat_anything/tts_talker/tts_voicechanger.py#5)
+Make sure the client class is set up with the same port in [here](chat_anything/tts_talker/tts_voicechanger.py#5)
 ```python
 client = Client("http://127.0.0.1:7860/")
 ```
