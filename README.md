@@ -26,7 +26,7 @@ To animate anything, we integrated current open-source models at hand for an ani
 
 Here we provide you with ChatAnything. A simple pipeline Enhanced with currently limitless Large Language Models, yielding imaginary Facetime chats with intented visual appearance!
 
-Remember, the repo and application are totally based on pre-trained deep learning methods and haven't included any training yet. We give all the credit to the open-source community (shout out to you). For detail of the pipeline, see our technical report (TODO: link here)
+Remember, the repo and application are totally based on pre-trained deep learning methods and haven't included any training yet. We give all the credit to the open-source community (shout out to you). For detail of the pipeline, see our [technical report](https://arxiv.org/abs/2311.06772)
 ## Release & Features & Future Plans
 
 - [ ] Fine-tune face rendering module.
@@ -144,7 +144,7 @@ If you like our pipeline and application, don't hesitate to reach out! Let's wor
 @misc{zhao2023ChatAnything,
       title={ChatAnything: Facetime Chat with LLM-Enhanced Personas}, 
       author={Yilin, Zhao and Xinbin, Yuan and Shanghua, Gao and Zhijie Lin and Qibin, Hou and Jiashi, Feng and Daquan, Zhou},
-      publisher={TODO:link},
+      publisher={arXiv:2311.06772},
       year={2023},
 }
 ```
