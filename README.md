@@ -15,8 +15,10 @@ pinned: false
 
 
 
-> What will it be like to Facetime any imaginary concepts?
+> What will it be like to Facetime any imaginary concepts? Do you want to see what the LLM-based agent you have been chatting with looks like?
 To animate anything, we integrated current open-source models at hand for an animation application for interactive AI-Agent chatting usage. 
+>
+> Assign any agents a visual appearance!
 > 
 > To start with, take a look at these incredible faces generated with open-source Civitai models that are to be animated.
 > 
