@@ -104,7 +104,7 @@ with gr.Blocks() as block:
         with gr.Row():
             gr.Markdown(INSTRUCTION_MARKDOWN)
         with gr.Row():  
-            openai_api_key_textbox = gr.Textbox(placeholder="Paste your OpenAI API key (sk-...) and hit Enter",
+            openai_api_key_textbox = gr.Textbox(placeholder="Paste your OpenAI API key (sk-...) or Keep Empty to use Local LLM, HIT Enter!",
                                             show_label=True, lines=1, type='password', value='', label='OpenAI API key')
             openai_api_key_register = gr.Button(
                 value="Register").style(full_width=False)
@@ -242,4 +242,4 @@ if __name__ == "__main__":
     #     port = int(sys.argv[1])
     # block.launch(debug=True, server_name="0.0.0.0",
     #              server_port=port, share=True, enable_queue = True)
-    block.launch()
+    block.launch(share=True)

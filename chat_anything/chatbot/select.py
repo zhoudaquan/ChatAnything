@@ -12,8 +12,10 @@ Model name and description:
 
 Warning: {warning}
 
-The avilable Options: 
+
+The answer can only be one of the following avilable Options:
 {choices}
+You must only output one letter of the alphabet!!!
 Answer:
 """
 

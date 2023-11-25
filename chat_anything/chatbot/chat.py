@@ -38,16 +38,17 @@ def load_chain(llm, class_concept=None):
 
 
 
-def set_openai_api_key(api_key, use_gpt4, history=None, max_tokens=1024):
+def set_openai_api_key(api_key, use_gpt4, history=None, max_tokens=1024, use_local_llm=True):
     """Set the api key and return chain.
     If no api_key, then None is returned.
     """
-    if api_key and api_key.startswith("sk-") and len(api_key) > 50:
+    if (api_key and api_key.startswith("sk-") and len(api_key) > 50):
         os.environ["OPENAI_API_KEY"] = api_key
         print("\n\n ++++++++++++++ Setting OpenAI API key ++++++++++++++ \n\n")
         print(str(datetime.datetime.now()) + ": Before OpenAI, OPENAI_API_KEY length: " + str(
             len(os.environ["OPENAI_API_KEY"])))
 
+        
         if use_gpt4:
             llm = ChatOpenAI(
                 temperature=0, max_tokens=max_tokens, model_name="gpt-4")
@@ -69,4 +70,17 @@ def set_openai_api_key(api_key, use_gpt4, history=None, max_tokens=1024):
         video_file_path = os.path.join('tmp', uid, 'videos/tempfile.mp4')
         audio_file_path = os.path.join('tmp', uid, 'audio/tempfile.mp3')
         return llm, use_gpt4, history, uid, video_file_path, audio_file_path
+    elif use_local_llm:
+        os.environ["OPENAI_API_KEY"] = 'EMPTY'
+        print("\n\n ++++++++++++++ Using local LLM  ++++++++++++++ \n\n")
+
+        llm = ChatOpenAI(temperature=0, max_tokens=max_tokens,
+                            model_name="gpt-3.5-turbo")
+        history = history or []
+        history.append(['', '[SYSTEM] You are using free local LLM, you can generate your object and talk to it now!'])
+        uid = ''.join(random.sample(string.ascii_lowercase + string.ascii_uppercase, 5))
+        video_file_path = os.path.join('tmp', uid, 'videos/tempfile.mp4')
+        audio_file_path = os.path.join('tmp', uid, 'audio/tempfile.mp3')
+        return llm, use_gpt4, history, uid, video_file_path, audio_file_path
+    
     return None, None, None, None, None, None
