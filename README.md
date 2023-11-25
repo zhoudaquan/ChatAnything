@@ -65,12 +65,6 @@ docker run -p 127.0.0.1:8901:8901 -it --gpus all chatanything
 docker run -it --gpus all chatanything bash
 ``` 
 
-### Run
-Specify a port for the gradio application to run on and set off!
-```
-PORT=8809 python app.py $PORT
-```
-
 ### (Optional) Use Local LLM
 You can also use your local LLM instead of ChatGPT to power ChatAnything.
 ```
@@ -84,6 +78,13 @@ bash script/init_local_llm.sh
 export OPENAI_API_BASE=http://localhost:8000/v1
 export OPENAI_API_KEY=EMPTY
 ```
+
+### Run
+Specify a port for the gradio application to run on and set off!
+```
+PORT=8809 python app.py $PORT
+```
+
 
 # Configuring: From User Input Concept to Appearance & Voice
 The first step of the pipeline is to generate a image for SadTalker and at the same time set up the Text to Sound Module for voice chat.
