@@ -104,7 +104,7 @@ with gr.Blocks() as block:
         with gr.Row():
             gr.Markdown(INSTRUCTION_MARKDOWN)
         with gr.Row():  
-            openai_api_key_textbox = gr.Textbox(placeholder="Paste your OpenAI API key (sk-...) or Keep Empty to use Local LLM, HIT Enter!",
+            openai_api_key_textbox = gr.Textbox(placeholder="Paste your OpenAI API key (sk-...) or Keep Empty to use Local LLM",
                                             show_label=True, lines=1, type='password', value='', label='OpenAI API key')
             openai_api_key_register = gr.Button(
                 value="Register").style(full_width=False)
