@@ -33,7 +33,7 @@ Remember, the repo and application are totally based on pre-trained deep learnin
 
 - [ ] Fine-tune face rendering module.
 - [ ] Better TTS module & voice render module.
-- [ ] Adding Open-source Language Models.
+- [x] Adding Open-source Language Models.
 - [x] Initial release
   - Facetime Animation.
   - Multiple model choices for initial frame generation.
@@ -67,6 +67,7 @@ docker run -it --gpus all chatanything bash
 
 ### (Optional) Use Local LLM
 You can also use your local LLM instead of ChatGPT to power ChatAnything.
+Create a new environment for the [fastchat](https://github.com/lm-sys/FastChat) LLM service ( fastchat is incompatible with python-3.8 which is the required python for ChatAnything). Then follow the Instruct to install the environment and start the Language Model Service. The local LLM chat service would require around 14G of GPU memory for the 7B LLM Model. Run the Language Model service carefully. 
 ```
 # install FastChat
 pip install "fschat[model_worker,webui]"
@@ -148,7 +149,8 @@ Again, the project hasn't yet included any training. The pipeline is totally bas
 - [diffusers](https://github.com/huggingface/diffusers): GOAT of Image Generative Framework🥳.
 - [langchain](https://github.com/langchain-ai/langchain): An Awesome Package for Dealing with LLM.
 - [edge-tts](https://github.com/rany2/edge-tts): An Awesome Package for Text To Sound Solutions.
-- [gradio](https://www.gradio.app/): GOAT😄 Machine Learning based App framework. 
+- [gradio](https://www.gradio.app/): GOAT😄 Machine Learning based App framework.
+- [fastchat](https://github.com/lm-sys/FastChat): Amazing Open-source LLM service!
 - [Civitai](https://civitai.com/models) and [Huggingface_hub](https://huggingface.co/models): Find your ideal Image Generative Model on Civitai. These Communities are Crazy🥂. Here are Some Fantastic Derivatives of [stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5):
     - [Game Icon Institute_mode](https://civitai.com/models/47800?modelVersionId=76533)
     - [dreamshaper](https://civitai.com/models/4384/dreamshaper)
