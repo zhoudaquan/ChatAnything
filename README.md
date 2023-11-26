@@ -26,10 +26,13 @@ To animate anything, we integrated current open-source models at hand for an ani
 
 <!-- ![faces](./resources/readme/show.png) -->
 
-Here we provide you with ChatAnything. A simple pipeline Enhanced with currently limitless Large Language Models, yielding imaginary Facetime chats with intented visual appearance!
+Here we provide you with ChatAnything. A simple pipeline Enhanced with currently limitless Large Language Models, yielding imaginary Facetime chats with intended visual appearance!
 
-Remember, the repo and application are totally based on pre-trained deep learning methods and haven't included any training yet. We give all the credit to the open-source community (shout out to you). For detail of the pipeline, see our [technical report](https://arxiv.org/abs/2311.06772)
-## Release & Features & Future Plans
+Remember, the repo and application are totally based on pre-trained deep learning methods and haven't included any training yet. We give all the credit to the open-source community (shout out to you). For details on the pipeline, see our [technical report](https://arxiv.org/abs/2311.06772)
+## Updates @Nov 26, 2023
+We now add support for open-source LLM-LLaMA to speed up the pipeline. You can try it now!
+
+## Project Milestone Log
 
 - [ ] Fine-tune face rendering module.
 - [ ] Better TTS module & voice render module.
@@ -39,7 +42,7 @@ Remember, the repo and application are totally based on pre-trained deep learnin
   - Multiple model choices for initial frame generation.
   - Multiple choices for voices.
 # Install & Run
-Just follow the instructions. Every thing would be simple (hopefully). Reach out if you met with any problems!
+Just follow the instructions. Everything would be simple (hopefully). Reach out if you met with any problems!
 ### Install
 First, install the virtual environment.
 ```
@@ -57,7 +60,7 @@ python python_scripts/prepare_models.py
 ```
 
 ### Building Docker
-Try build a docker if you find it easier. This part is not fully tested. If you find a anything wrong, feel free to contribute~
+Try build a docker if you find it easier. This part is not fully tested. If you find anything wrong, feel free to contribute~
 ```
 docker build --network=host -t chatanything .
 # docker run -dp 127.0.0.1:8901:8901 chatanything
@@ -72,10 +75,10 @@ Create a new environment for the [fastchat](https://github.com/lm-sys/FastChat) 
 # install FastChat
 pip install "fschat[model_worker,webui]"
 
-# start local server
+# start a local server
 bash script/init_local_llm.sh
 
-# export local server path
+# Export local server path
 export OPENAI_API_BASE=http://localhost:8000/v1
 export OPENAI_API_KEY=EMPTY
 ```
@@ -88,32 +91,32 @@ PORT=8809 python app.py $PORT
 
 
 # Configuring: From User Input Concept to Appearance & Voice
-The first step of the pipeline is to generate a image for SadTalker and at the same time set up the Text to Sound Module for voice chat.
+The first step of the pipeline is to generate an image for SadTalker and at the same time set up the Text to Sound Module for voice chat.
 
 The pipeline would query a powerful LLM (ChatGPT) for the selection in a zero-shot multi-choice selection format.
-Three Questions are asked upon the initial of every conversation(init frame generation):
-1. Provide a imagen personality for the user input concept.
+Three Questions are asked at the initial of every conversation(init frame generation):
+1. Provide an image personality for the user input concept.
 2. Select a Generative model for the init frame generation.
-3. Select a Text To Sound Voice(Model) for the character base on the personality.
+3. Select a Text-to-Shoud Voice(Model) for the character based on the personality.
 
-We have constructed the model selection to be extendable. Add your ideal model with just a few lines of Configuring! The rest of this section would breifly introduce the steps to add a init-frame generator/language voice.
+We have constructed the model selection to be extendable. Add your ideal model with just a few lines of Configuring! The rest of this section will briefly introduce the steps to add an init-frame generator/language voice.
 
 ### Image Generator
 Configure the models in the [Model Config](./resources/models.yaml). This Config acts as the memory (or an image-generating tool pool) for the LLM.
 
-The prompt sets up this selection process. Each sub field of the "models" would turn into an option in the multiple-choice question.
+The prompt sets up this selection process. Each subfield of the "models" would turn into an option in the multiple-choice question.
 the "**desc**" field of each element is what the Language Model would see. The key is not provided to the LM as it would sometimes mislead it.
 the others are used for the image generation as listed: 
-1. model_dir: the repo-path for diffusers package. As the pretrained Face-landmark ControlNet is based on stable-diffusion-v1-5, we currently only supports the derivatives of it.
+1. model_dir: the repo-path for diffusers package. As the pre-trained Face-landmark ControlNet is based on stable-diffusion-v1-5, we currently only support the derivatives of it.
 2. lora_path: LoRA derivatives are powerful, try a LoRA model also for better stylization. Should directly point to the parameters binary file.
-3. prompt_template & negative_prompt: this is used for prompting the text-to-image diffusion model. Find a ideal prompt for your model and stick with it. A "{}" should be in the prompt template for inserting the user input concept.
+3. prompt_template & negative_prompt: this is used for prompting the text-to-image diffusion model. Find an ideal prompt for your model and stick with it. A "{}" should be in the prompt template for inserting the user input concept.
 
-Here are some **Tips** for configuring you own model.
+Here are some **Tips** for configuring your own model.
 1. Provide the LLM with a simple description of the generative model. It is worth noting that the description needs to be concise and accurate for a correct selection. 
 2. Set the model_dir to a local directory of diffusers stable-diffusion-v1-5 derivatives. Also, you can provide a repo-id on the huggingface hub model space. The model would be downloaded when first chosen, wait for it.
 3. To better utilize the resources from the community, we also add in support of the LoRA features. To add the LoRA module, you would need to give the path to the parameter files.
 
-4. Carefully write the prompt template and negative prompt. These which affect the initial face generation a lot. Be aware that the prompt template should contain only one pair of "{}" to insert the concept that users wrote on the application webpage. We support the Stable-Diffusion-Webui prompt style as implemented by diffusers, feel free to copy the prompt from Civitai for better prompting the generation and put in the "{}" to the original prompt for ChatAnything!
+4. Carefully write the prompt template and negative prompt. These affect the initial face generation a lot. Be aware that the prompt template should contain only one pair of "{}" to insert the concept that users wrote on the application webpage. We support the Stable-Diffusion-Webui prompt style as implemented by diffusers, feel free to copy the prompt from Civitai for better prompting the generation and put in the "{}" to the original prompt for ChatAnything!
 
 Again, this model's config acts as an extended tool pool for the LM, the application would drive the LM to choose from this config and use the chosen model to generate. Sometimes the LM fails to choose the correct model or choosing any available model, this would cause the Chatanything app to fail on a generation.
 
@@ -124,7 +127,7 @@ We are using the edge_tts package for text-to-speech support. The voice selectio
 
 # On-going tasks.
 ### Customized Voice.
-There is a Voice Changer TextToSpeach-SpeachVoiceConversion Pipeline app, which ensures a better customized voice. We are trying to leverage its TTS functionality. 
+There is a Voice Changer TextToSpeach-SpeachVoiceConversion Pipeline app, which ensures a better-customized voice. We are trying to leverage its TTS functionality. 
 
 Reach out if you want to add a voice of your own or your hero!
 
@@ -133,7 +136,7 @@ You would need to change a little bit in the code first:
 1. Alter this [code](./utils.py#14) to import a TTSTalker from chat_anything/tts_talker/tts_voicechanger.py.
 2. switch the config to another one, change [code](./utils.py#14) "resources/voices_edge.yaml" -> "resources/voices_voicechanger.yaml"
 
-The try running a [Voice Changer](https://huggingface.co/spaces/kevinwang676/Voice-Changer) on your local machine. Simply set up git-lfs and install the repo and run it for the TTS voice service.
+Try running a [Voice Changer](https://huggingface.co/spaces/kevinwang676/Voice-Changer) on your local machine. Simply set up git-lfs and install the repo and run it for the TTS voice service.
 The TTS caller was set to port 7860. 
 
 Make sure the client class is set up with the same port in [here](chat_anything/tts_talker/tts_voicechanger.py#5)
